@@ -54,11 +54,13 @@ public class MainActivity extends AppCompatActivity {
     private void calcularIMC(float peso, float altura) {
         this.imc = new IMC(peso, altura);
         this.imc.calcular();
+        this.imc.classificar();
         this.exibirResultado();
     }
 
     private void exibirResultado() {
-        String msg = String.format("Seu IMC é %.2f", this.imc.getResultado());
+        String msg = String.format("Seu IMC é %.2f e está classificado em %s",
+                this.imc.getResultado(), this.imc.getClassificacao());
 
         AlertDialog.Builder janela = new AlertDialog.Builder(this);
         janela.setTitle("Resultado do IMC");

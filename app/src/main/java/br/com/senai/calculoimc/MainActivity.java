@@ -34,18 +34,18 @@ public class MainActivity extends AppCompatActivity {
         btCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputPeso = etPeso.getText().toString();
+                String inputAltura = etAltura.getText().toString();
 
-                if (etPeso == null) {
+                if (inputPeso.isEmpty()) {
                     Toast.makeText(MainActivity.this, 
                             "Preencha seu peso", Toast.LENGTH_SHORT).show();
-                } else if (etAltura == null) {
+                } else if (inputAltura.isEmpty()) {
                     Toast.makeText(MainActivity.this,
                             "Preencha sua altura", Toast.LENGTH_SHORT).show();
                 } else {
-                    String inputPeso = etPeso.getText().toString();
-                    float peso = Float.parseFloat(inputPeso);
 
-                    String inputAltura = etAltura.getText().toString();
+                    float peso = Float.parseFloat(inputPeso);
                     float altura = Float.parseFloat(inputAltura);
 
                     InputMethodManager imm = (InputMethodManager)
